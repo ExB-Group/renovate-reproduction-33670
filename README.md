@@ -1,17 +1,13 @@
-# minimal-reproduction-template
-
-First, read the [Renovate minimal reproduction instructions](https://github.com/renovatebot/renovate/blob/main/docs/development/minimal-reproductions.md).
-
-Then replace the current `h1` with the Renovate Issue/Discussion number.
+# 33670
 
 ## Current behavior
 
-Explain the current behavior here.
+When having an `oci_pull` dependency in a `MODULE.bazel` for a docker image that has a tag and a digest configured then renovate is not updating this digest even so there is a newer one and it is found according to the logs.
 
 ## Expected behavior
 
-Explain the expected behavior here.
+Renovate should update the `digest` field on the `MODULE.bazel` file.
 
 ## Link to the Renovate issue or Discussion
 
-Put your link to the Renovate issue or Discussion here.
+https://github.com/renovatebot/renovate/discussions/33670

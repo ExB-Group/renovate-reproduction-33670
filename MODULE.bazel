@@ -1,0 +1,17 @@
+module(name = "test")
+
+# rules_oci
+oci = use_extension("@rules_oci//oci:extensions.bzl", "oci")
+
+oci.pull(
+    name = "debian",
+    tag = "bookworm-slim",
+    digest = "sha256:36e591f228bb9b99348f584e83f16e012c33ba5cad44ef5981a1d7c0a93eca22",
+    image = "docker.io/library/debian",
+    platforms = ["linux/amd64"],
+)
+use_repo(
+    oci,
+    "debian",
+    "debian_linux_amd64",
+)
